@@ -1,6 +1,9 @@
+from pickletools import read_long1
 import re
 
 reAllowedSymbols = r"^[IVXLCDM]*$"
+reStandartForm = r"^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+reStandartFormRelaxed = r"^M*(CM|CD|D?C*)(XC|XL|L?X*)(IX|IV|V?I*)$" # M,C,X,I can occur more often
 
 valueOfSymbols:dict[str, int] = {
     "I":1, 	
@@ -12,7 +15,17 @@ valueOfSymbols:dict[str, int] = {
     "M":1000
 }
 
-def RomanToInt(text:str) -> int: 
+def determineForm(text:str):
+    if re.match(reStandartForm, text):
+        return "STANDART_FORM"
+    if re.match(reStandartFormRelaxed, text):
+        return "STANDART_FORM_RELAXED"
+    if re.match(reAllowedSymbols, text):
+        return "ARBITRARY_ORDER"
+    return "INVALID"
+
+# text: string consiting of roman symbols
+def romanToInt(text:str) -> int: 
     if not re.match(reAllowedSymbols,text):
         raise ValueError(f"unknown symbols used")
     
