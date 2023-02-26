@@ -24,9 +24,9 @@ def determine_form(text: str) -> str:
     :return: "form" of the roman number e.g. STANDARD_FORM
     """
     if re.match(RE_STANDARD_FORM, text):
-        return "STANDART_FORM"
+        return "STANDARD_FORM"
     if re.match(RE_STANDARD_FORM_RELAXED, text):
-        return "STANDART_FORM_RELAXED"
+        return "STANDARD_FORM_RELAXED"
     if re.match(RE_ALLOWED_SYMBOLS, text):
         return "ARBITRARY_ORDER"
     return "INVALID"
