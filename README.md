@@ -9,9 +9,10 @@ Example: `MMXXII` → `2022`
 You can simply use the functions by importing the file `RomanNumeral.py`:
 
 ```python
-import RomanNumeral as RN
-print(RN.romanToInt("MMXXII"))
-print(RN.determineForm("MMXXII"))
+import roman_numeral as rn
+
+print(rn.roman_to_int("MMXXII"))
+print(rn.determine_form("MMXXII"))
 ```
 
 Or you can use the command line like this:
