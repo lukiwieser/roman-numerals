@@ -6,7 +6,7 @@ Example: `MMXXII` → `2022`
 
 ## Usage
 
-You can simply use the functions by importing the file `RomanNumeral.py`:
+You can simply use the functions by importing the file `roman_numeral.py`:
 
 ```python
 import roman_numeral as rn
