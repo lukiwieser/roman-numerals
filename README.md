@@ -2,6 +2,8 @@
 
 A small program to convert roman symbols to integers.
 
+Example: `MMXXII` → `2022`
+
 ## Usage
 
 You can simply use the functions by importing the file `RomanNumeral.py`:
