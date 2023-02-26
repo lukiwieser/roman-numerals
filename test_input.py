@@ -1,8 +1,8 @@
+import sys
+
 import roman_numeral as rn
 
-import sys
 text = sys.argv[1]
-
 form = rn.determine_form(text)
 print(form)
 if form != "INVALID":
